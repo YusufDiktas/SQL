@@ -1,0 +1,17 @@
+CREATE TABLE öğrenciler
+(
+id char(4),
+isim_soyisim varchar(30),
+not_ort real,
+kayit_tarih date
+);
+-- VAROLAN BİR TABLODAN YENİ BİR TABLO OLUŞTURMAK
+CREATE TABLE öğretmen_ort
+AS
+SELECT isim_soyisim,not_ort
+FROM öğretmenler;
+-- SELECT -- DQL -
+SELECT * FROM öğretmenler; -- Bir tablodaki bütün verileri çağırmak istersek * karakterini kullanırız
+SELECT * FROM öğretmen_ort;
+SELECT isim_soyisim,kayit_tarih FROM öğretmenler; -- Birtablodan sadece bir yada birden fazla field'i çağırmak için bu şekilde kullarınız
+select isim_soyisim,kayit_tarih from öğrenciler
